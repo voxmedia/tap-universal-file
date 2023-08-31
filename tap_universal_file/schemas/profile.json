@@ -140,8 +140,7 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "last_click":{
          "type":[
