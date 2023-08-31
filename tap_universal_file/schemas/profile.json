@@ -31,8 +31,7 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "login_time":{
          "type":[
