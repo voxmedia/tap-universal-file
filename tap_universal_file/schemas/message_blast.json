@@ -57,6 +57,12 @@
             "string"
          ]
       },
+      "engagement":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
       "optout_time":{
          "type":[
             "null",
