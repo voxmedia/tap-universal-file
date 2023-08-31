@@ -2,13 +2,7 @@
    "$schema":"http://json-schema.org/draft-04/schema#",
    "type":"object",
    "properties":{
-      "name":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
-      "link_params":{
+      "profile_id":{
          "type":[
             "null",
             "string"
@@ -20,39 +14,71 @@
             "string"
          ]
       },
-      "day":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
-      "list_name":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
-      "id":{
-         "type":"integer"
-      },
-      "_sdc_file_name":{
-         "type":[
-            "null",
-            "string"
-         ]
-      },
-      "_sdc_line_number":{
-         "type":[
-            "null",
-            "integer"
-         ]
-      },
-      "_sdc_last_modified":{
+      "send_time":{
          "type":[
             "null",
             "string"
          ],
          "format":"date-time"
+      },
+      "clicks":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
+      "opens":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
+      "device":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
+      "message_revenue":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
+      "delivery_status":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
+      "link_params":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
+      "optout_time":{
+         "type":[
+            "null",
+            "string"
+         ],
+         "format":"date-time"
+      },
+      "id":{
+         "type":[
+            "null",
+            "string"
+         ]
+      },
+      "_sdc_file_name":{
+         "type":"string"
+      },
+      "_sdc_line_number":{
+         "type":"integer"
+      },
+      "_sdc_last_modified":{
+         "format":"date-time",
+         "type":"string"
       }
    }
 }
