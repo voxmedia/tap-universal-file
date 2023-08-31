@@ -18,8 +18,7 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "click_time":{
          "type":[
@@ -79,15 +78,13 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "purchase_time":{
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "_sdc_file_name":{
          "type":"string"

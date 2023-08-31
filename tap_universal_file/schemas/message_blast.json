@@ -12,8 +12,7 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "blast_id":{
          "type":[
@@ -67,8 +66,7 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "_sdc_file_name":{
          "type":"string"
