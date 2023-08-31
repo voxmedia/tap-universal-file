@@ -105,37 +105,37 @@
       "total_opens":{
          "type":[
             "null",
-            "integer"
+            "string"
          ]
       },
       "total_clicks":{
          "type":[
             "null",
-            "integer"
+            "string"
          ]
       },
       "total_unique_opens":{
          "type":[
             "null",
-            "integer"
+            "string"
          ]
       },
       "total_unique_clicks":{
          "type":[
             "null",
-            "integer"
+            "string"
          ]
       },
       "total_pageviews":{
          "type":[
             "null",
-            "integer"
+            "string"
          ]
       },
       "total_messages":{
          "type":[
             "null",
-            "integer"
+            "string"
          ]
       },
       "last_open":{
@@ -180,7 +180,7 @@
       "purchase_count":{
          "type":[
             "null",
-            "integer"
+            "string"
          ]
       },
       "purchase_price":{
