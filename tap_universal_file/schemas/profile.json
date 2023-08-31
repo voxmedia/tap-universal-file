@@ -24,22 +24,19 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "optout_time":{
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "login_time":{
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "optout_reason":{
          "type":[
@@ -57,8 +54,7 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "browser":{
          "type":[
@@ -142,22 +138,19 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "last_click":{
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "last_pageview":{
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "id":{
          "type":[
@@ -199,15 +192,13 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "first_purchase_time":{
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "bounce_message":{
          "type":[
@@ -225,8 +216,7 @@
          "type":[
             "null",
             "string"
-         ],
-         "format":"date-time"
+         ]
       },
       "total_revenue":{
          "type":[
