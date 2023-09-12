@@ -21,6 +21,7 @@
          ]
       },
       "day":{
+         "format":"date",
          "type":[
             "null",
             "string"
