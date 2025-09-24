@@ -8,7 +8,6 @@ from pathlib import Path
 
 from singer_sdk import Stream, Tap
 from singer_sdk import typing as th  # JSON schema typing helpers
-from singer_sdk.catalog import Catalog
 from singer_sdk.helpers._util import read_json_file
 from singer_sdk.mapper import PluginMapper
 
@@ -360,7 +359,7 @@ class TapUniversalFile(Tap):
         self,
         *,
         config: dict | PurePath | str | list[PurePath | str] | None = None,
-        catalog: PurePath | str | dict | Catalog | None = None,
+        catalog: PurePath | str | dict | None = None,
         state: PurePath | str | dict | None = None,
         parse_env_config: bool = False,
         validate_config: bool = True,
@@ -375,17 +374,15 @@ class TapUniversalFile(Tap):
 
         # Declare private members
         self._streams: dict[str, Stream] | None = None
-        self._input_catalog: Catalog | None = None
+        self._input_catalog: dict | None = None
         self._state: dict[str, Stream] = {}
-        self._catalog: Catalog | None = None  # Tap's working catalog
+        self._catalog: dict | None = None  # Tap's working catalog
 
         # Process input catalog
-        if isinstance(catalog, Catalog):
+        if isinstance(catalog, dict):
             self._input_catalog = catalog
-        elif isinstance(catalog, dict):
-            self._input_catalog = Catalog.from_dict(catalog)  # type: ignore[arg-type]
         elif catalog is not None:
-            self._input_catalog = Catalog.from_dict(read_json_file(catalog))
+            self._input_catalog = read_json_file(catalog)
 
         # Initialize mapper
         self.mapper: PluginMapper

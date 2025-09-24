@@ -16,7 +16,6 @@ SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 if TYPE_CHECKING:
     from os import PathLike
 
-    from singer_sdk.catalog import Schema
     from singer_sdk.tap_base import Tap
 
 
@@ -26,7 +25,7 @@ class FileStream(Stream):
     def __init__(
         self,
         tap: Tap,
-        schema: str | PathLike | dict[str, Any] | Schema | None = None,
+        schema: str | PathLike | dict[str, Any] | None = None,
         name: str | None = None,
     ) -> None:
         """Duplicates superclass functionality but runs replication config before init.
