@@ -8,7 +8,7 @@ from pathlib import Path
 
 from singer_sdk import Stream, Tap
 from singer_sdk import typing as th  # JSON schema typing helpers
-from singer_sdk._singerlib import Catalog
+from singer_sdk.catalog import Catalog
 from singer_sdk.helpers._util import read_json_file
 from singer_sdk.mapper import PluginMapper
 
