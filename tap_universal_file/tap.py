@@ -14,8 +14,6 @@ from singer_sdk.mapper import PluginMapper
 if TYPE_CHECKING:
     from pathlib import PurePath
 
-    import click
-
 SCHEMAS_DIR = Path(__file__).parent / Path("./schemas")
 
 from tap_universal_file import streams
@@ -331,29 +329,6 @@ class TapUniversalFile(Tap):
             raise ValueError(msg)
         msg = f"'{file_type}' is not a valid file_type."
         raise ValueError(msg)
-
-    @classmethod
-    def cb_discover(
-        cls: type[Tap],
-        ctx: click.Context,
-        param: click.Option,  # noqa: ARG003
-        value: bool,  # noqa: FBT001
-    ) -> None:
-        """CLI callback to run the tap in discovery mode and pass state into tap."""
-        if not value:
-            return
-
-        config_args = ctx.params.get("config", ())
-        state = ctx.params.get("state", ())
-        config_files, parse_env_config = cls.config_from_cli_args(*config_args)
-        tap = cls(
-            config=config_files,  # type: ignore[arg-type]
-            state=state,
-            parse_env_config=parse_env_config,
-            validate_config=False,
-        )
-        tap.run_discovery()
-        ctx.exit()
 
     def __init__(  # noqa: PLR0913
         self,
