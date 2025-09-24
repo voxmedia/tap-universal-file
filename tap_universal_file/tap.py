@@ -330,54 +330,6 @@ class TapUniversalFile(Tap):
         msg = f"'{file_type}' is not a valid file_type."
         raise ValueError(msg)
 
-    def __init__(  # noqa: PLR0913
-        self,
-        *,
-        config: dict | PurePath | str | list[PurePath | str] | None = None,
-        catalog: PurePath | str | dict | None = None,
-        state: PurePath | str | dict | None = None,
-        parse_env_config: bool = False,
-        validate_config: bool = True,
-    ) -> None:
-        """Initialize the tap, but create state before running discovery."""
-        # Call grandparent (PluginBase) __init__ method.
-        super(Tap, self).__init__(
-            config=config,
-            parse_env_config=parse_env_config,
-            validate_config=validate_config,
-        )
-
-        # Declare private members
-        self._streams: dict[str, Stream] | None = None
-        self._input_catalog: dict | None = None
-        self._state: dict[str, Stream] = {}
-        self._catalog: dict | None = None  # Tap's working catalog
-
-        # Process input catalog
-        if isinstance(catalog, dict):
-            self._input_catalog = catalog
-        elif catalog is not None:
-            self._input_catalog = read_json_file(catalog)
-
-        # Initialize mapper
-        self.mapper: PluginMapper
-        self.mapper = PluginMapper(
-            plugin_config=dict(self.config),
-            logger=self.logger,
-        )
-
-        # Process state. In parent (Tap), state is processed after registering from
-        # catalog (see below), which causes issues.
-        state_dict: dict = {}
-        if isinstance(state, dict):
-            state_dict = state
-        elif state:
-            state_dict = read_json_file(state)
-        self.load_state(state_dict)
-
-        # Register from catalog
-        self.mapper.register_raw_streams_from_catalog(self.catalog)
-
 
 if __name__ == "__main__":
     TapUniversalFile.cli()
