@@ -125,9 +125,8 @@ class FilesystemManager:
         for file_dict in file_dict_list:
             if starting_replication_key_value is None or file_dict[
                 "last_modified"
-            ] >= datetime.datetime.strptime(
+            ] >= datetime.datetime.fromisoformat(
                 starting_replication_key_value,
-                r"%Y-%m-%dT%H:%M:%S%z",  # ISO-8601
             ):
                 none_synced = False
                 yield file_dict
